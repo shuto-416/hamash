@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import ReactMarkdown from 'react-markdown'
 import Head from 'next/head'
 import Image from 'next/image'
 
