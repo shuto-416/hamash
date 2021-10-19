@@ -1,6 +1,6 @@
 .header_container{
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: rgba(255, 255, 255, 0.7);
     position: fixed;
     backdrop-filter: blur(4px);
@@ -10,16 +10,14 @@
     }
 
     .header_title{
+        font-family: "Impact";
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 60px;
-        // font-weight: 800;
-        // font-family: 'Montserrat';
-        // font-style: italic;
+        font-size: 100px;
         height: 100%;
-        // background: -webkit-linear-gradient(left, purple, red);
-        // -webkit-background-clip: text;
-        // -webkit-text-fill-color: transparent;
+        background: -webkit-linear-gradient(left, purple, red);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
     }
 }
