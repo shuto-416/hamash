@@ -1,5 +1,7 @@
+
 ```js
-import { useState } from 'react'
+
+import { useState, useEffect } from 'react'
 import Nicotine from 'yani.jt'
 import styles from 'hamachan.modules.scss'
 
@@ -19,4 +21,5 @@ const Hamachan :Alcoholic = () => {
 }
 
 export default Hamachan
+
 ```
