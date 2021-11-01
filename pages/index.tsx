@@ -1,36 +1,17 @@
-import type { NextPage } from 'next'
+import fs from 'fs'
+import { NextPage, GetStaticProps } from 'next'
 import ReactMarkdown from 'react-markdown'
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
+import CodeBlock from './CodeBlock'
 import { useEffect, useState } from 'react'
 
-import { md } from "body.md"
+type StaticProps = {
+  terms: string
+}
 
-// const readMD = (setMarkdown: Function, setIsLoading: Function): void => {
-//   const postName = 'body'
-//   import(`./${postName}.md`)
-// //   .then(res => {
-// //     fetch(res.default)
-// //         .then(res => {
-// //           res.text()
-// //         })
-// //         .then(res => {
-// //             setMarkdown(res)
-// //             setIsLoading(false)
-// //         })
-// // })
-// }
-
-const Home: NextPage = props => {
-
-  const [markdown, setMarkdown] = useState<string>('')
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-
-  // useEffect(() => {
-  //   readMD(setMarkdown, setIsLoading)
-  // }, [])
-
-
+const Home: NextPage<StaticProps> = props => {
+  const { terms } = { ...props }
   return (
     <div>
       <Head>
@@ -38,10 +19,19 @@ const Home: NextPage = props => {
         <meta name="hamash" content="portfolio of ore" />
       </Head>
       <div className={styles.title}>
-        <ReactMarkdown children={md} />
+        <ReactMarkdown children={terms} components={{code:CodeBlock}}></ReactMarkdown>
       </div>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const terms = fs.readFileSync(process.cwd() + '/pages/body.md', 'utf8')
+  return {
+    props: {
+      terms: terms,
+    }
+  }
 }
 
 export default Home
