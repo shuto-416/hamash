@@ -1,6 +1,6 @@
 import { CodeComponent, ReactMarkdownNames } from 'react-markdown/lib/ast-to-react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 const CodeBlock: CodeComponent | ReactMarkdownNames = ({
     inline,
