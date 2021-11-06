@@ -1,5 +1,5 @@
 
-```tsx
+```js
 import Knowledge from 'github'
 import Nicotine from 'JT'
 
