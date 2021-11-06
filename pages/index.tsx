@@ -18,7 +18,7 @@ const Home: NextPage<StaticProps> = props => {
         <meta name="hamash" content="portfolio of ore" />
       </Head>
       <div className={styles.title}>
-        <ReactMarkdown children={terms} components={{code:CodeBlock}}></ReactMarkdown>
+        <ReactMarkdown className={styles.markdown} children={terms} components={{code:CodeBlock}}></ReactMarkdown>
       </div>
     </div>
   )
