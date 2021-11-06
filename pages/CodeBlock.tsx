@@ -1,6 +1,8 @@
 import { CodeComponent, ReactMarkdownNames } from 'react-markdown/lib/ast-to-react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { github } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
 
 const CodeBlock: CodeComponent | ReactMarkdownNames = ({
     inline,
@@ -12,7 +14,6 @@ const CodeBlock: CodeComponent | ReactMarkdownNames = ({
     const match = /language-(\w+)/.exec(className || '');
 
     return !inline && match ? (
-
         <SyntaxHighlighter style={dark} language={match[1]}>
           {String(children).replace(/\n$/, '')}
         </SyntaxHighlighter>
