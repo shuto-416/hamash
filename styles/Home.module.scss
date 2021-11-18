@@ -1,8 +1,12 @@
 .title{
-    padding-top: 50px;
+    // centering
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 
     .markdown{
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.5;
         font-weight: 300;
         padding: 0px 15%;

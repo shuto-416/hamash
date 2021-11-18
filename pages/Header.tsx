@@ -22,11 +22,9 @@ const Header :NextPage = () => {
     const b = 'red';
     return(
         <div className={styles.header_container}>
-
-            <div className={styles.header_title}>
-                <ReactMarkdown children={title} />
-            </div>
-
+            
+            <ReactMarkdown className={styles.header_title} children={title} />
+            
             <div className={styles.header_menu}>
                 <Button aria-controls="simple-menu"
                 aria-haspopup="true"
